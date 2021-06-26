@@ -21,5 +21,6 @@ bspc config gapless_monocle      true
 bspc rule -a Brave-browser desktop='^2'
 bspc rule -a discord desktop='^6' follow=on
 bspc rule -a Pcmanfm desktop='^5'
+bspc rule -a Code desktop='^3'
 #bspc rule -a Kupfer.py focus=on
 #bspc rule -a Screenkey manage=off
