@@ -4,15 +4,24 @@
 
 # terminal emulator
 super + Return
-	alacritty
+	alacritty	
 
 # program launcher
 super + d
-	dmenu_run
+#	dmenu_run
+	rofi -show drun
 
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
+
+# open pcman fm
+super + f
+	pcmanfm
+
+# open brave
+super + b
+	brave
 
 #
 # bspwm hotkeys
@@ -120,6 +129,25 @@ super + alt + shift + {h,j,k,l}
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
+# screenshot stuff
+#fullscreen screenshot save
+
+Print
+     maim "/home/$USER/Pictures/$(date).png"
+
+#cropped save
+super + Print
+      maim --select "/home/$USER/Pictures/$(date).png"
+
+#  clipboard fullscreen
+super + shift + Print
+     maim | xclip -selection clipboard -t image/png
+
+# clipboard cropped
+super + ctrl + Print
+    maim --select | xclip -selection clipboard -t image/png
+
+# sound and backlight
 # volume control
 XF86AudioLowerVolume
 	amixer set Master 1%-
@@ -133,4 +161,3 @@ XF86MonBrightnessDown
 	xbacklight -dec 5
 XF86MonBrightnessUp
 	xbacklight -inc 5
-
